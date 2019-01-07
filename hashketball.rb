@@ -164,14 +164,16 @@ def shoe_size(name)
 end
 
 def team_colors(team_name)
+  a = 0
   game_hash.collect do |location, team_data|
     binding.pry
     team_data.collect do |data, player|
       binding.pry
-      if data.to_s == team_name
-        if data.to_s == :colors
-          return player
-        end
+      if data.to_s == :team_name
+        a += 1
+      end
+      if a == 1 && data.to_s == :colors
+        return player
       end
     end
   end
