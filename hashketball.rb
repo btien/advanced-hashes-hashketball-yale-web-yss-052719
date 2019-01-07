@@ -169,10 +169,10 @@ def team_colors(team_name)
     binding.pry
     team_data.collect do |data, player|
       binding.pry
-      if data.to_s == :team_name
+      if data == :team_name
         a += 1
       end
-      if a == 1 && data.to_s == :colors
+      if a == 1 && data == :colors
         return player
       end
     end
